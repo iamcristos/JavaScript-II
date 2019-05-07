@@ -1,9 +1,11 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-const addFunc = (a) => a.reduce((a,b)=> a+b, 0);
 //a function that adds all even number in an array
 function sumEvenArray (arr) {
   const even = arr.filter(num=> num%2===0);
+  function addFunc (even){ 
+    even.reduce((a,b)=> a+b, 0);
+  }
   return addFunc(even);
 }
 
