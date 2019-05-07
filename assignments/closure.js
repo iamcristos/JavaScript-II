@@ -3,9 +3,7 @@
 //a function that adds all even number in an array
 function sumEvenArray (arr) {
   const even = arr.filter(num=> num%2===0);
-  function addFunc (even){ 
-    even.reduce((a,b)=> a+b, 0);
-  }
+  const addFunc =  (even)=> even.reduce((a,b)=> a+b, 0);
   return addFunc(even);
 }
 
@@ -19,10 +17,7 @@ console.log(sumEvenArray([1,2,3,4,5,6,7,8,9,10]));
 const counter = () => {
   // Return a function that when invoked increments and returns a counter variable.
   let count = 0
-  function increaseCount () {
-   return count += 1;
-  }
-
+  const increaseCount = () =>  count += 1;
   return increaseCount;
 };
 const newCounter = counter()
