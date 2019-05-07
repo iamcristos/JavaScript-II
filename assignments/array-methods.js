@@ -81,7 +81,26 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
-
+// return the email address of everyone that got aboove 100 donations and send them a message with their names
+const message = (email,name, donation) => {
+    console.log(`to ${email}; Dear ${name} we got ${donation} from you.`)
+};
+const sendMsg = runners.filter(runner => runner.donation > 100)
+    .forEach(runner => {
+        return message(runner.email, runner.first_name, runner.donation)
+    });
 // Problem 2
-
+// no of runners with donation below 100
+const totalBelow100 = runners.reduce((sum,runner)=>{
+    if (runner.donation < 100) {
+        sum += 1;
+    } return sum 
+},0)
+console.log(totalBelow100)
 // Problem 3
+// the typist sending message to the email forgot her glasses so she needs all email in catilaletters
+const emailUppercase = [];
+ runners.forEach(runner=>{
+    emailUppercase.push((runner.email).toUpperCase());
+});
+console.log(emailUppercase)
