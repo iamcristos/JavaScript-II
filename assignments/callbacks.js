@@ -70,4 +70,8 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  const newArr = new Set(array);
+   return cb([...newArr]);
 }
+
+console.log(removeDuplicates([1,1,1,2,2,3,3,4], (n)=> n))
